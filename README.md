@@ -1,0 +1,1 @@
+# minigamecollection.github.io
