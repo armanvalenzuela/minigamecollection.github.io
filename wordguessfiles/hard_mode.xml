@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:layout_marginEnd="40dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/currentStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Score: 0"
+            android:layout_marginEnd="16dp"
+            android:textColor="#FFFFFF"
+            android:background="#222222"
+            android:padding="8dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/highestScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Highest Score: 0"
+            android:textColor="#FFFFFF"
+            android:background="#222222"
+            android:padding="8dp"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:rowCount="5"
+        android:columnCount="5"
+        android:padding="8dp"
+        android:layout_marginTop="20dp"/>
+
+    <GridLayout
+        android:id="@+id/keyboardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="3"
+        android:columnCount="10"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:background="#A9A9A9" >
+    </GridLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:text="SUBMIT"
+        android:textSize="20dp"
+        android:textColor="@color/white" />
+</LinearLayout>
