@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameList">
+
+    <Button
+        android:id="@+id/memoryButton"
+        android:layout_width="149dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="356dp"
+        android:fontFamily="@font/cheese"
+        android:text="MEMORY"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gametitle" />
+
+    <Button
+        android:id="@+id/snakeButton"
+        android:layout_width="149dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/cheese"
+        android:text="SNAKE"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toStartOf="@+id/fourinrowButton"
+        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tictactoeButton" />
+
+    <Button
+        android:id="@+id/wordguessButton"
+        android:layout_width="150dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/cheese"
+        android:onClick="WordGuessButton"
+        android:text="WORD GUESS"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gametitle" />
+
+    <TextView
+        android:id="@+id/gametitle"
+        android:layout_width="375dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/cheese"
+        android:text="MINI GAME COLLECTION"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <Button
+        android:id="@+id/tictactoeButton"
+        android:layout_width="150dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="59dp"
+        android:fontFamily="@font/cheese"
+        android:onClick="TicTacToeButton"
+        android:text="TIC TAC TOE"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toStartOf="@+id/wordguessButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gametitle" />
+
+    <Button
+        android:id="@+id/fourinrowButton"
+        android:layout_width="151dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/cheese"
+        android:text="4 IN A ROW"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wordguessButton" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="552dp"
+        android:hint="Username"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gametitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
