@@ -5,18 +5,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gamelist_color"
     tools:context=".GameList">
 
     <Button
         android:id="@+id/memoryButton"
         android:layout_width="149dp"
         android:layout_height="156dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="360dp"
         android:fontFamily="@font/cheese"
         android:text="MEMORY"
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gametitle" />
 
@@ -43,7 +43,8 @@
         android:fontFamily="@font/cheese"
         android:onClick="WordGuessButton"
         android:text="WORD GUESS"
-        android:textSize="21sp"
+        android:textSize="35sp"
+        android:background="@drawable/wordguess_colorbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gametitle" />
 
@@ -54,6 +55,7 @@
         android:fontFamily="@font/cheese"
         android:text="MINI GAME COLLECTION"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +75,8 @@
         android:fontFamily="@font/cheese"
         android:onClick="TicTacToeButton"
         android:text="TIC TAC TOE"
-        android:textSize="21sp"
+        android:textSize="35sp"
+        android:background="@drawable/tictactoe_colorbutton"
         app:layout_constraintEnd_toStartOf="@+id/wordguessButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,10 +98,12 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="536dp"
+        android:fontFamily="@font/cheese"
         android:hint="Username"
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gametitle" />
 
