@@ -13,6 +13,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:text="WORD GUESS"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:fontFamily="@font/cheese"
         android:textSize="36sp"
         android:textStyle="bold" />
 
@@ -25,6 +28,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="80dp"
         android:gravity="center"
+        android:fontFamily="@font/cheese"
+        android:textColor="@color/black"
         android:text="Guess the five-letter word in five tries by entering words and receiving feedback on the letters that match the target word in the correct position (green) or are included but in the wrong position! (yellow)."
         android:textSize="18sp" />
 
@@ -35,6 +40,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="Adjust the difficulty"
+        android:fontFamily="@font/cheese"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <RadioGroup
@@ -47,22 +54,28 @@
 
         <RadioButton
             android:id="@+id/easyButton"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:textSize="16sp"
+            android:background="@drawable/green_button"
+            android:fontFamily="@font/cheese"
             android:text="EASY" />
 
         <RadioButton
             android:id="@+id/normalButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/yellow_button"
+            android:fontFamily="@font/cheese"
             android:textSize="16sp"
             android:text="NORMAL" />
 
         <RadioButton
             android:id="@+id/hardButton"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/cheese"
+            android:background="@drawable/red_button"
             android:textSize="16sp"
             android:text="HARD" />
     </RadioGroup>
@@ -75,5 +88,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/blue_button"
+        android:fontFamily="@font/cheese"
+        android:textSize="25sp"
         android:text="PLAY" />
 </LinearLayout>
