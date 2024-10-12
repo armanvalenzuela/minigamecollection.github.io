@@ -45,4 +45,8 @@ public class GameList extends AppCompatActivity {
         Intent intent = new Intent(this, PopStartup.class);
         startActivity(intent);
     }
+    public void RowButton(View view){
+        Intent intent = new Intent(this, Row.class);
+        startActivity(intent);
+    }
 }

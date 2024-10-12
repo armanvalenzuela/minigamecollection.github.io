@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/dark_gradient">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="4 IN A ROW"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4" />
+
+    <TextView
+        android:id="@+id/instructionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="Connect 4 of the same colored discs in a row to win"
+        android:textSize="19sp"
+        android:textColor="#E0E0E0"
+        android:fontFamily="sans-serif-light"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3" />
+
+    <TextView
+        android:id="@+id/difficultyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructionTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="122dp"
+        android:layout_marginBottom="16dp"
+        android:text="Adjust the difficulty"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3" />
+
+    <RadioGroup
+        android:id="@+id/difficultyGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/difficultyTextView"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:id="@+id/easyRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="EASY"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#64DD17"
+            android:fontFamily="sans-serif"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:maxWidth="200dp" />
+
+        <RadioButton
+            android:id="@+id/normalRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="NORMAL"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#FFAB00"
+            android:fontFamily="sans-serif"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:maxWidth="200dp" />
+
+        <RadioButton
+            android:id="@+id/hardRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="HARD"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#D50000"
+            android:fontFamily="sans-serif"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:maxWidth="200dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/playBotButton"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/difficultyGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:backgroundTint="#FF8F00"
+        android:elevation="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="PLAY VS.\nBOT"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/playFriendButton"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/playBotButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#3F51B5"
+        android:elevation="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="PLAY VS. FRIEND"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="16dp"/>
+</RelativeLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,16 +14,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniGameCollection"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".HardRow"
+            android:exported="false" />
+        <activity
+            android:name=".NormalRow"
+            android:exported="false" />
+        <activity
+            android:name=".EasyRow"
+            android:exported="false" />
+        <activity
+            android:name=".VsPlayer"
+            android:exported="false" />
+        <activity
+            android:name=".Row"
+            android:exported="false" />
+        <activity android:name=".Playerxbot_hardmode" />
         <activity
             android:name=".PopStartup"
-            android:exported="true"/>
+            android:exported="true" />
         <activity android:name=".PopGameplay" />
         <activity android:name=".PopInstructions" />
         <activity android:name=".SnakeMainActivity" />
         <activity android:name=".SnakeInstructionsActivity" /> <!-- New instructions activity -->
-        <activity android:name=".Snake"
-            android:exported="true"/>
+        <activity
+            android:name=".Snake"
+            android:exported="true" />
         <activity
             android:name=".PlayerMode"
             android:exported="false" />
@@ -53,7 +70,7 @@
             android:exported="false" />
         <activity
             android:name=".UserActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
