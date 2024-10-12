@@ -36,4 +36,8 @@ public class GameList extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void SnakeButton(View view){
+        Intent intent = new Intent(this, Snake.class);
+        startActivity(intent);
+    }
 }

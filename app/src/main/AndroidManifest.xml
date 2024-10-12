@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniGameCollection"
         tools:targetApi="31">
+        <activity android:name=".SnakeMainActivity" />
+        <activity android:name=".SnakeInstructionsActivity" /> <!-- New instructions activity -->
+        <activity android:name=".Snake"
+            android:exported="true"/>
         <activity
             android:name=".PlayerMode"
             android:exported="false" />
