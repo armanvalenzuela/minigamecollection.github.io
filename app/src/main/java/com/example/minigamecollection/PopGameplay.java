@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Pop extends AppCompatActivity {
+public class PopGameplay extends AppCompatActivity {
 
     private static final String PREFS_NAME = "PopItGamePrefs";
     private static final String HIGH_SCORE_KEY = "HighScore";
@@ -36,7 +36,7 @@ public class Pop extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pop);
+        setContentView(R.layout.pop_gameplay);
 
         GridLayout tileGrid = findViewById(R.id.tileGrid);
         scoreText = findViewById(R.id.scoreText); // Find the scoreText TextView
@@ -54,24 +54,30 @@ public class Pop extends AppCompatActivity {
             tiles.add(tile);
             final int index = i;
 
-            tile.setOnClickListener(v -> {
-                if (playerTurn) {
-                    highlightTile(index); // Highlight when the player presses the button
-                    checkPlayerInput(index);
+            tile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (playerTurn) {
+                        highlightTile(index); // Highlight when the player presses the button
+                        checkPlayerInput(index);
+                    }
                 }
             });
         }
 
-        startButton.setOnClickListener(v -> {
-            restartGame();
-            startButton.setText("Restart"); // Change the button text to Restart after starting the game
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                restartGame();
+                startButton.setText("Restart"); // Change the button text to Restart after starting the game
+            }
         });
 
         mainMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Navigate back to the startup activity
-                Intent intent = new Intent(Pop.this, StartupActivity.class);
+                Intent intent = new Intent(PopGameplay.this, PopStartup.class);
                 startActivity(intent);
                 finish(); // Close the current game screen
             }

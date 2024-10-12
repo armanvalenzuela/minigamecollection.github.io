@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class StartupActivity extends AppCompatActivity {
+public class PopStartup extends AppCompatActivity {
 
     private static final String PREFS_NAME = "PopItGamePrefs";
     private static final String HIGH_SCORE_KEY = "HighScore";
@@ -17,7 +17,7 @@ public class StartupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pop_menu);
+        setContentView(R.layout.pop_startup);
 
         Button startGameButton = findViewById(R.id.startGameButton);
         Button instructionsButton = findViewById(R.id.instructionsButton);
@@ -26,7 +26,7 @@ public class StartupActivity extends AppCompatActivity {
         startGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StartupActivity.this, Pop.class);
+                Intent intent = new Intent(PopStartup.this, PopGameplay.class);
                 startActivity(intent);
             }
         });
@@ -34,7 +34,7 @@ public class StartupActivity extends AppCompatActivity {
         instructionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StartupActivity.this, InstructionsActivity.class);
+                Intent intent = new Intent(PopStartup.this, PopInstructions.class);
                 startActivity(intent);
             }
         });

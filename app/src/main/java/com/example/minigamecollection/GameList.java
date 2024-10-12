@@ -40,4 +40,9 @@ public class GameList extends AppCompatActivity {
         Intent intent = new Intent(this, Snake.class);
         startActivity(intent);
     }
+
+    public void PopButton(View view){
+        Intent intent = new Intent(this, PopStartup.class);
+        startActivity(intent);
+    }
 }
