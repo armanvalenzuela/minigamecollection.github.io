@@ -14,8 +14,9 @@
         android:layout_height="156dp"
         android:layout_marginTop="360dp"
         android:fontFamily="@font/cheese"
-        android:text="MEMORY"
-        android:textSize="21sp"
+        android:text="POP IT"
+        android:textSize="35sp"
+        android:background="@drawable/memory_colorbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gametitle" />
@@ -28,7 +29,8 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/cheese"
         android:text="SNAKE"
-        android:textSize="21sp"
+        android:background="@drawable/snake_colorbutton"
+        android:textSize="35sp"
         app:layout_constraintEnd_toStartOf="@+id/fourinrowButton"
         app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +92,8 @@
         android:layout_marginEnd="36dp"
         android:fontFamily="@font/cheese"
         android:text="4 IN A ROW"
-        android:textSize="21sp"
+        android:background="@drawable/row_colorbutton"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordguessButton" />
 
