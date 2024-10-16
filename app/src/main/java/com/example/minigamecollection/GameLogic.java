@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class GameLogic {
-    private int [][] gameBoard;
+    private final int [][] gameBoard;
 
     private String[] playerNames = {"Player 1", "Player 2"};
 
@@ -53,34 +53,49 @@ public class GameLogic {
         boolean isWinner = false;
 
         //Horizontal
-        for (int r = 0; r < 5; r++){
-            if (gameBoard[r][0] == gameBoard[r][3] && gameBoard[r][0] == gameBoard[r][4] &&
-                    gameBoard[r][0] != 0){
-                winType = new int[] {r, 0, 1};
+
+        for (int r = 0; r < 5; r++) {
+            if (gameBoard[r][0] == gameBoard[r][1] &&
+                    gameBoard[r][1] == gameBoard[r][2] &&
+                    gameBoard[r][2] == gameBoard[r][3] &&
+                    gameBoard[r][3] == gameBoard[r][4] &&
+                    gameBoard[r][0] != 0) {
+                winType = new int[]{r, 0, r, 4};  // From (r, 0) to (r, 4)
                 isWinner = true;
             }
         }
 
-        //Vertical
-        for (int c = 0; c < 5; c++){
-            if (gameBoard[0][c] == gameBoard[3][c] && gameBoard[4][c] == gameBoard[0][c] &&
-                    gameBoard[0][c] != 0){
-                winType = new int[] {0, c, 2};
+        // Vertical
+        for (int c = 0; c < 5; c++) {
+            if (gameBoard[0][c] == gameBoard[1][c] &&
+                    gameBoard[1][c] == gameBoard[2][c] &&
+                    gameBoard[2][c] == gameBoard[3][c] &&
+                    gameBoard[3][c] == gameBoard[4][c] &&
+                    gameBoard[0][c] != 0) {
+                winType = new int[]{0, c, 4, c};  // From (0, c) to (4, c)
                 isWinner = true;
             }
         }
 
-        //Negative Diagonal
-        if (gameBoard[0][0] == gameBoard[3][3] && gameBoard[0][0] == gameBoard[4][4] &&
-                gameBoard[0][0] != 0){
-            winType = new int[] {0, 2, 3};
+        // Negative Diagonal (from top-left [0, 0] to bottom-right [4, 4])
+        if (gameBoard[0][0] == gameBoard[1][1] &&
+                gameBoard[1][1] == gameBoard[2][2] &&
+                gameBoard[2][2] == gameBoard[3][3] &&
+                gameBoard[3][3] == gameBoard[4][4] &&
+                gameBoard[0][0] != 0) {
+            winType = new int[]{0, 0, 4, 4};  // From (0, 0) to (4, 4)
             isWinner = true;
         }
 
+
         //Positive Diagonal
-        if (gameBoard[2][0] == gameBoard[1][1] && gameBoard[2][0] == gameBoard[0][2] &&
-                gameBoard[2][0] != 0){
-            winType = new int[] {2, 2, 4};
+        if (gameBoard[4][0] == gameBoard[3][1] &&
+                gameBoard[3][1] == gameBoard[2][2] &&
+                gameBoard[2][2] == gameBoard[1][3] &&
+                gameBoard[1][3] == gameBoard[0][4] &&
+                gameBoard[4][0] != 0) {
+
+            winType = new int[]{4, 0, 0, 4};  // Starting at (4, 0) and ending at (0, 4)
             isWinner = true;
         }
 

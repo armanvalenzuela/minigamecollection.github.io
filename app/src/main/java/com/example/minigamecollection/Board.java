@@ -171,12 +171,12 @@ public class Board extends View {
                 col * cellSize + (float) cellSize / 2,cellSize * 5, paint);
     }
 
-    private void diagonalLinePos(Canvas canvas){
-        canvas.drawLine(0, cellSize * 5, cellSize * 5, 0, paint);
-    }
-
     private void diagonalLineNeg(Canvas canvas){
         canvas.drawLine(0, 0, cellSize * 5, cellSize * 5, paint);
+    }
+
+    private void diagonalLinePos(Canvas canvas){
+        canvas.drawLine(0, cellSize * 5, cellSize * 5, 0, paint);
     }
 
     private void winningLine(Canvas canvas){

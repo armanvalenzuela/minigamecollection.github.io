@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gamelist_color"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:layout_centerInParent="true"
 
@@ -12,20 +12,20 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/title_button"
         android:baselineAligned="false"
         android:fontFamily="@font/cheese"
         android:text="@string/mini_game_collection"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@drawable/wordguess_colorbutton"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/usernameEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598" />
+        app:layout_constraintVertical_bias="0.71" />
 
     <EditText
         android:id="@+id/usernameEditText"
@@ -34,9 +34,9 @@
         android:layout_marginTop="248dp"
         android:autofillHints=""
 
+        android:background="@drawable/energy_pulse"
         android:fontFamily="@font/cheese"
         android:hint="@string/username"
-        android:background="@drawable/row_colorbutton"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textAlignment="center"
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        app:layout_constraintVertical_bias="0.238" />
 
     <Button
         android:id="@+id/saveButton"
@@ -56,18 +56,18 @@
         android:layout_height="50dp"
         android:layout_marginStart="121dp"
         android:layout_marginEnd="124dp"
-        android:background="@drawable/snake_colorbutton"
+        android:background="@drawable/enter_button"
         android:fontFamily="@font/cheese"
         android:text="Enter"
-        android:textSize="21sp"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628" />
+        app:layout_constraintVertical_bias="0.591" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
