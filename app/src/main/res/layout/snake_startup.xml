@@ -4,59 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SnakeStartupActivity">
+    android:background="@drawable/snake_bg"
+    tools:context=".Snake">
 
     <!-- Game Title -->
     <TextView
         android:id="@+id/gameTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:text="Snake Game"
+        android:background="@drawable/wordguess_bg"
+        android:fontFamily="@font/cheese"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="100dp" />
 
+    <!-- Instructions -->
+
     <!-- Start Game Button -->
+
+    <!-- Instructions Button -->
+
+    <!-- Reset High Score Button -->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="375dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/title_button"
+        android:fontFamily="@font/cheese"
+        android:gravity="center"
+        android:text="Snake is a classic game where the player controls a growing snake that moves around the screen, eating food while avoiding obstacles and its own tail. As the snake consumes more food, it becomes longer and more challenging to maneuver."
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTitle"
+        tools:ignore="TextSizeCheck" />
+
     <Button
         android:id="@+id/startGameButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="292dp"
+        android:background="@drawable/green_button"
+        android:fontFamily="@font/cheese"
         android:text="Start Game"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:backgroundTint="@android:color/holo_green_light"
-        app:layout_constraintTop_toBottomOf="@id/gameTitle"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gameTitle" />
 
-    <!-- Instructions Button -->
     <Button
         android:id="@+id/instructionsButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/blue_button"
+        android:fontFamily="@font/cheese"
         android:text="Instructions"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:backgroundTint="@android:color/holo_blue_light"
-        app:layout_constraintTop_toBottomOf="@id/startGameButton"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startGameButton" />
 
-    <!-- Reset High Score Button -->
     <Button
         android:id="@+id/resetHighScoreButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Reset High Score"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:fontFamily="@font/cheese"
+        android:textSize="21sp"
+        android:background="@drawable/red_button"
         app:layout_constraintTop_toBottomOf="@id/instructionsButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

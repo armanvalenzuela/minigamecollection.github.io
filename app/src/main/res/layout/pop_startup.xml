@@ -4,14 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartupActivity">
+    android:background="@drawable/memory_bg"
+    tools:context=".PopStartup">
 
     <!-- Game Title -->
     <TextView
         android:id="@+id/gameTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Pop It Game"
+        android:text="Pop It"
+        android:fontFamily="@font/cheese"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:background="@drawable/memory_colorbutton"
         android:textSize="36sp"
         android:textStyle="bold"
         android:layout_marginTop="100dp"
@@ -20,22 +25,28 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Start Game Button -->
-    <Button
-        android:id="@+id/startGameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Game"
-        app:layout_constraintTop_toBottomOf="@+id/gameTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp" />
 
     <!-- Instructions Button -->
+
+    <Button
+        android:id="@+id/startGameButton"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="196dp"
+        android:text="Start Game"
+        android:fontFamily="@font/cheese"
+        android:background="@drawable/memory_colorbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTitle" />
+
     <Button
         android:id="@+id/instructionsButton"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:text="Instructions"
+        android:fontFamily="@font/cheese"
         app:layout_constraintTop_toBottomOf="@+id/startGameButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,9 +55,10 @@
     <!-- Reset High Score Button -->
     <Button
         android:id="@+id/resetHighScoreButton"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Reset High Score"
+        android:fontFamily="@font/cheese"
         app:layout_constraintTop_toBottomOf="@+id/instructionsButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

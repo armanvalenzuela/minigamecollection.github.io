@@ -4,62 +4,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/dark_gradient">
+    android:background="@drawable/row_bg">
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="5dp"
         android:gravity="center"
         android:text="4 IN A ROW"
-        android:textSize="38sp"
+        android:background="@drawable/row_colorbutton"
+        android:textSize="35sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:fontFamily="sans-serif-medium"
-        android:shadowColor="#000000"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="4" />
+        android:textColor="@color/black"
+        android:fontFamily="@font/cheese"/>
 
     <TextView
         android:id="@+id/instructionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTextView"
-        android:layout_centerHorizontal="true"
+
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="51dp"
         android:layout_marginRight="35dp"
         android:layout_marginBottom="32dp"
+        android:fontFamily="@font/cheese"
         android:gravity="center"
-        android:text="Connect 4 of the same colored discs in a row to win"
-        android:textSize="19sp"
+        android:text="The objective is to be the first to form a horizontal, vertical, or diagonal line of four of your colored discs on a grid. Connect 4 of the same colored discs in a row to win."
         android:textColor="#E0E0E0"
-        android:fontFamily="sans-serif-light"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3" />
+        android:textSize="19sp" />
 
     <TextView
         android:id="@+id/difficultyTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/instructionTextView"
+        android:layout_marginTop="56dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="122dp"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/cheese"
         android:text="Adjust the difficulty"
-        android:textSize="22sp"
         android:textColor="#FFFFFF"
-        android:fontFamily="sans-serif-medium"
-        android:shadowColor="#000000"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="3" />
+        android:textSize="22sp" />
 
     <RadioGroup
         android:id="@+id/difficultyGroup"
@@ -71,47 +60,38 @@
 
         <RadioButton
             android:id="@+id/easyRadioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:textSize="17sp"
+            android:buttonTint="#64DD17"
+            android:fontFamily="@font/cheese"
+            android:background="@drawable/green_button"
+            android:maxWidth="200dp"
             android:text="EASY"
             android:textColor="#FFFFFF"
-            android:buttonTint="#64DD17"
-            android:fontFamily="sans-serif"
-            android:shadowColor="#000000"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="2"
-            android:maxWidth="200dp" />
+            android:textSize="17sp" />
 
         <RadioButton
             android:id="@+id/normalRadioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:text="NORMAL"
             android:textColor="#FFFFFF"
             android:buttonTint="#FFAB00"
-            android:fontFamily="sans-serif"
-            android:shadowColor="#000000"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="2"
+            android:background="@drawable/yellow_button"
+            android:fontFamily="@font/cheese"
             android:maxWidth="200dp" />
 
         <RadioButton
             android:id="@+id/hardRadioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:text="HARD"
             android:textColor="#FFFFFF"
             android:buttonTint="#D50000"
-            android:fontFamily="sans-serif"
-            android:shadowColor="#000000"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="2"
+            android:background="@drawable/red_button"
+            android:fontFamily="@font/cheese"
             android:maxWidth="200dp" />
     </RadioGroup>
 
@@ -124,11 +104,11 @@
         android:layout_marginTop="62dp"
         android:backgroundTint="#FF8F00"
         android:elevation="8dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/cheese"
         android:text="PLAY VS.\nBOT"
-        android:textColor="#FFFFFF"
+        android:background="@drawable/orange_button"
         android:textStyle="bold"
-        android:textSize="16dp"
+        android:textSize="21sp"
         android:gravity="center" />
 
     <Button
@@ -139,10 +119,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="#3F51B5"
-        android:elevation="8dp"
-        android:fontFamily="sans-serif-medium"
+        android:elevation="5dp"
+        android:fontFamily="@font/cheese"
         android:text="PLAY VS. FRIEND"
-        android:textColor="#FFFFFF"
+        android:background="@drawable/violet_button"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="16dp"/>
+        android:textSize="21sp"/>
 </RelativeLayout>

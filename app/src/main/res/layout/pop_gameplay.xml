@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/memory_bg"
+    tools:context=".PopGameplay">
 
     <!-- Score display -->
     <TextView
@@ -12,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score: 0"
+        android:fontFamily="@font/cheese"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
@@ -25,6 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High Score: 0"
+        android:fontFamily="@font/cheese"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
@@ -129,6 +134,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Game"
+        android:fontFamily="@font/cheese"
         app:layout_constraintTop_toBottomOf="@id/messageText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -141,6 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Main Menu"
+        android:fontFamily="@font/cheese"
         app:layout_constraintTop_toBottomOf="@id/startButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
