@@ -20,8 +20,6 @@ public class EasyRow extends AppCompatActivity {
     private TextView easyBotTurn;
     private GridLayout gameBoard;
     private Random random;
-    private View player1Box;
-    private View easyBotBox;
     private char lastWinner = 'R';
 
     @Override
@@ -43,15 +41,10 @@ public class EasyRow extends AppCompatActivity {
         gameBoard = findViewById(R.id.game_board);
         gameOver = false;
         random = new Random();
-        player1Box = findViewById(R.id.player1_box);
-        easyBotBox = findViewById(R.id.player2_box);
 
         isPlayerTurn = true;
         player1Turn.setVisibility(View.VISIBLE);
         easyBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.VISIBLE);
-        easyBotBox.setVisibility(View.INVISIBLE);
-
         initializeBoard();
     }
 
@@ -110,8 +103,6 @@ public class EasyRow extends AppCompatActivity {
         player1Turn.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
         easyBotTurn.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
-        player1Box.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
-        easyBotBox.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
         if (currentPlayer == 'Y') {
             isPlayerTurn = false;
@@ -194,8 +185,6 @@ public class EasyRow extends AppCompatActivity {
         String drawMessage = "It's a draw!";
         player1Turn.setVisibility(View.INVISIBLE);
         easyBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.INVISIBLE);
-        easyBotBox.setVisibility(View.INVISIBLE);
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -217,8 +206,7 @@ public class EasyRow extends AppCompatActivity {
         String winnerMessage = currentPlayer == 'R' ? "You win!" : "Easy Bot wins!";
         player1Turn.setVisibility(View.INVISIBLE);
         easyBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.INVISIBLE);
-        easyBotBox.setVisibility(View.INVISIBLE);
+
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -243,16 +231,12 @@ public class EasyRow extends AppCompatActivity {
             isPlayerTurn = false;
             player1Turn.setVisibility(View.INVISIBLE);
             easyBotTurn.setVisibility(View.VISIBLE);
-            player1Box.setVisibility(View.INVISIBLE);
-            easyBotBox.setVisibility(View.VISIBLE);
             new android.os.Handler().postDelayed(this::makeEasyBotMove, 1000);
         } else {
             currentPlayer = 'R';
             isPlayerTurn = true;
             player1Turn.setVisibility(View.VISIBLE);
             easyBotTurn.setVisibility(View.INVISIBLE);
-            player1Box.setVisibility(View.VISIBLE);
-            easyBotBox.setVisibility(View.INVISIBLE);
         }
     }
 }

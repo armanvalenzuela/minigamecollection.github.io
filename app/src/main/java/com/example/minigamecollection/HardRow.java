@@ -20,8 +20,6 @@ public class HardRow extends AppCompatActivity {
     private TextView hardBotTurn;
     private GridLayout gameBoard;
     private Random random;
-    private View player1Box;
-    private View hardBotBox;
     private char lastWinner = 'R';
 
     @Override
@@ -43,14 +41,10 @@ public class HardRow extends AppCompatActivity {
         gameBoard = findViewById(R.id.game_board);
         gameOver = false;
         random = new Random();
-        player1Box = findViewById(R.id.player1_box);
-        hardBotBox = findViewById(R.id.player2_box);
 
         isPlayerTurn = true;
         player1Turn.setVisibility(View.VISIBLE);
         hardBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.VISIBLE);
-        hardBotBox.setVisibility(View.INVISIBLE);
 
         initializeBoard();
     }
@@ -110,8 +104,6 @@ public class HardRow extends AppCompatActivity {
         player1Turn.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
         hardBotTurn.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
-        player1Box.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
-        hardBotBox.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
         if (currentPlayer == 'Y') {
             isPlayerTurn = false;
@@ -221,8 +213,6 @@ public class HardRow extends AppCompatActivity {
         String drawMessage = "It's a draw!";
         player1Turn.setVisibility(View.INVISIBLE);
         hardBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.INVISIBLE);
-        hardBotBox.setVisibility(View.INVISIBLE);
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -244,8 +234,6 @@ public class HardRow extends AppCompatActivity {
         String winnerMessage = currentPlayer == 'R' ? "You win!" : "Hard Bot wins!";
         player1Turn.setVisibility(View.INVISIBLE);
         hardBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.INVISIBLE);
-        hardBotBox.setVisibility(View.INVISIBLE);
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -270,16 +258,12 @@ public class HardRow extends AppCompatActivity {
             isPlayerTurn = false;
             player1Turn.setVisibility(View.INVISIBLE);
             hardBotTurn.setVisibility(View.VISIBLE);
-            player1Box.setVisibility(View.INVISIBLE);
-            hardBotBox.setVisibility(View.VISIBLE);
             new android.os.Handler().postDelayed(this::makeHardBotMove, 1000);
         } else {
             currentPlayer = 'R';
             isPlayerTurn = true;
             player1Turn.setVisibility(View.VISIBLE);
             hardBotTurn.setVisibility(View.INVISIBLE);
-            player1Box.setVisibility(View.VISIBLE);
-            hardBotBox.setVisibility(View.INVISIBLE);
         }
     }
 }

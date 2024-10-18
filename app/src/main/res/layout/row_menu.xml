@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,6 +14,7 @@
         android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp"
         android:background="@drawable/row_colorbutton"
         android:fontFamily="@font/cheese"
         android:gravity="center"
@@ -20,21 +22,26 @@
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="115dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/instructionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTextView"
+        android:layout_marginTop="208dp"
         android:fontFamily="@font/cheese"
         android:gravity="center"
+        android:background="@drawable/row_bg"
         android:text="The objective is to be the first to form a horizontal, vertical, or diagonal line of four of your colored discs on a grid. Connect 4 of the same colored discs in a row to win."
         android:textColor="@color/black"
         android:textSize="19sp"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="176dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/difficultyTextView"
@@ -43,12 +50,15 @@
         android:layout_below="@id/instructionTextView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="false"
+        android:layout_marginBottom="336dp"
         android:fontFamily="@font/cheese"
         android:text="Adjust the difficulty"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="22sp"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="351dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/playBotButton"
@@ -57,6 +67,7 @@
         android:layout_below="@id/difficultyGroup"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginBottom="184dp"
         android:background="@drawable/orange_button"
         android:elevation="8dp"
         android:fontFamily="@font/cheese"
@@ -64,14 +75,17 @@
         android:text="PLAY VS.\nBOT"
         android:textSize="21sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="465dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/playFriendButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_below="@id/playBotButton"
+        android:layout_marginBottom="92dp"
         android:background="@drawable/violet_button"
         android:elevation="5dp"
         android:fontFamily="@font/cheese"
@@ -79,48 +93,58 @@
         android:textColor="@color/black"
         android:textSize="21sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="563dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
         android:id="@+id/easyRadioButton"
         android:layout_width="85dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="272dp"
         android:background="@drawable/green_button"
         android:buttonTint="#64DD17"
         android:fontFamily="@font/cheese"
         android:maxWidth="200dp"
         android:text="EASY"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="17sp"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="411dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
         android:id="@+id/normalRadioButton"
         android:layout_width="115dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="272dp"
         android:background="@drawable/yellow_button"
         android:buttonTint="#FFAB00"
         android:fontFamily="@font/cheese"
         android:maxWidth="200dp"
         android:text="NORMAL"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="17sp"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="411dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
         android:id="@+id/hardRadioButton"
         android:layout_width="85dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="272dp"
         android:background="@drawable/red_button"
         android:buttonTint="#D50000"
         android:fontFamily="@font/cheese"
         android:maxWidth="200dp"
         android:text="HARD"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="17sp"
-        tools:layout_editor_absoluteX="251dp"
-        tools:layout_editor_absoluteY="410dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

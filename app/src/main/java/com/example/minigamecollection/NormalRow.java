@@ -1,5 +1,6 @@
 package com.example.minigamecollection;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
@@ -20,8 +21,6 @@ public class NormalRow extends AppCompatActivity {
     private TextView normalBotTurn;
     private GridLayout gameBoard;
     private Random random;
-    private View player1Box;
-    private View normalBotBox;
     private char lastWinner = 'R';
 
     @Override
@@ -43,14 +42,10 @@ public class NormalRow extends AppCompatActivity {
         gameBoard = findViewById(R.id.game_board);
         gameOver = false;
         random = new Random();
-        player1Box = findViewById(R.id.player1_box);
-        normalBotBox = findViewById(R.id.player2_box);
 
         isPlayerTurn = true;
         player1Turn.setVisibility(View.VISIBLE);
         normalBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.VISIBLE);
-        normalBotBox.setVisibility(View.INVISIBLE);
 
         initializeBoard();
     }
@@ -104,14 +99,13 @@ public class NormalRow extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("SetTextI18n")
     private void switchPlayer() {
         currentPlayer = (currentPlayer == 'R') ? 'Y' : 'R';
 
         player1Turn.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
         normalBotTurn.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
-        player1Box.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
-        normalBotBox.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
         if (currentPlayer == 'Y') {
             isPlayerTurn = false;
@@ -221,8 +215,6 @@ public class NormalRow extends AppCompatActivity {
         String drawMessage = "It's a draw!";
         player1Turn.setVisibility(View.INVISIBLE);
         normalBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.INVISIBLE);
-        normalBotBox.setVisibility(View.INVISIBLE);
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -244,8 +236,6 @@ public class NormalRow extends AppCompatActivity {
         String winnerMessage = currentPlayer == 'R' ? "You win!" : "Normal Bot wins!";
         player1Turn.setVisibility(View.INVISIBLE);
         normalBotTurn.setVisibility(View.INVISIBLE);
-        player1Box.setVisibility(View.INVISIBLE);
-        normalBotBox.setVisibility(View.INVISIBLE);
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -271,16 +261,12 @@ public class NormalRow extends AppCompatActivity {
             isPlayerTurn = false;
             player1Turn.setVisibility(View.INVISIBLE);
             normalBotTurn.setVisibility(View.VISIBLE);
-            player1Box.setVisibility(View.INVISIBLE);
-            normalBotBox.setVisibility(View.VISIBLE);
             new android.os.Handler().postDelayed(this::makeNormalBotMove, 1000);
         } else {
             currentPlayer = 'R';
             isPlayerTurn = true;
             player1Turn.setVisibility(View.VISIBLE);
             normalBotTurn.setVisibility(View.INVISIBLE);
-            player1Box.setVisibility(View.VISIBLE);
-            normalBotBox.setVisibility(View.INVISIBLE);
         }
     }
 }
