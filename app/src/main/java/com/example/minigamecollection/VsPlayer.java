@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.LinearLayout;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,8 +19,6 @@ public class VsPlayer extends AppCompatActivity {
     private TextView player1Turn;
     private TextView player2Turn;
     private GridLayout gameBoard;
-    private LinearLayout player1Box;
-    private LinearLayout player2Box;
     private char lastWinner = ' ';
 
     @Override
@@ -42,15 +39,11 @@ public class VsPlayer extends AppCompatActivity {
         player1Turn = findViewById(R.id.player1_turn);
         player2Turn = findViewById(R.id.player2_turn);
         gameBoard = findViewById(R.id.game_board);
-        player1Box = findViewById(R.id.player1_box);
-        player2Box = findViewById(R.id.player2_box);
         gameOver = false;
 
         player1Turn.setVisibility(View.VISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
 
-        player1Box.setVisibility(View.VISIBLE);
-        player2Box.setVisibility(View.INVISIBLE);
 
         initializeBoard();
     }
@@ -98,8 +91,6 @@ public class VsPlayer extends AppCompatActivity {
         player1Turn.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
         player2Turn.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
-        player1Box.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
-        player2Box.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
     }
 
     private boolean checkWin() {
@@ -170,9 +161,6 @@ public class VsPlayer extends AppCompatActivity {
         player1Turn.setVisibility(View.INVISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
 
-        player1Box.setVisibility(View.INVISIBLE);
-        player2Box.setVisibility(View.INVISIBLE);
-
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
                     .setTitle("Game Over")
@@ -194,8 +182,6 @@ public class VsPlayer extends AppCompatActivity {
         player1Turn.setVisibility(View.INVISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
 
-        player1Box.setVisibility(View.INVISIBLE);
-        player2Box.setVisibility(View.INVISIBLE);
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -224,7 +210,5 @@ public class VsPlayer extends AppCompatActivity {
         player1Turn.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
         player2Turn.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
 
-        player1Box.setVisibility(currentPlayer == 'R' ? View.VISIBLE : View.INVISIBLE);
-        player2Box.setVisibility(currentPlayer == 'Y' ? View.VISIBLE : View.INVISIBLE);
     }
 }

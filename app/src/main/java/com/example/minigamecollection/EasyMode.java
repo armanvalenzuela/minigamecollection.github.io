@@ -85,7 +85,7 @@ public class EasyMode extends AppCompatActivity {
 
     private void setupGrid() {
         gridLayout.removeAllViews();
-        gridLayout.setBackgroundColor(Color.BLACK);
+        gridLayout.setBackgroundColor(Color.TRANSPARENT);
 
         int boxSize = 150;
 
@@ -129,7 +129,7 @@ public class EasyMode extends AppCompatActivity {
             Button button = new Button(this);
             button.setText(letter);
             button.setBackgroundColor(Color.LTGRAY);
-            button.setTextColor(Color.WHITE);
+            button.setTextColor(Color.BLACK);
 
             GridLayout.LayoutParams params = new GridLayout.LayoutParams();
             params.width = 0;

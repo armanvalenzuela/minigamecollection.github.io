@@ -10,22 +10,21 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="42dp"
         android:background="@drawable/title_button"
         android:baselineAligned="false"
         android:fontFamily="@font/cheese"
         android:text="@string/mini_game_collection"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/usernameEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <EditText
         android:id="@+id/usernameEditText"
@@ -41,7 +40,7 @@
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColorHint="#3f3f3f"
         android:textSize="21sp"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintEnd_toEndOf="parent"

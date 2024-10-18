@@ -1,75 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    android:background="@drawable/dark_gradient">
+    android:background="@drawable/row_bg">
 
+    <!-- Game Board -->
     <ImageView
         android:id="@+id/back_arrow"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="start"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="-15dp"
         android:contentDescription="Back to Main"
         android:padding="16dp"
-        android:src="@android:drawable/ic_menu_close_clear_cancel" />
-
-    <!-- Player 1 Box -->
-    <LinearLayout
-        android:id="@+id/player1_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="#8B0000"
-        android:padding="8dp"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:id="@+id/player1_turn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 1 (Red) Turn"
-            android:fontFamily="@font/cheese"
-            android:textSize="24sp"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
-
-    <!-- Game Board -->
-    <GridLayout
-        android:id="@+id/game_board"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:rowCount="6"
-        android:columnCount="7"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp">
-    </GridLayout>
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Player 2 Box -->
-    <LinearLayout
-        android:id="@+id/player2_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="#FFD700"
-        android:padding="8dp"
-        android:layout_marginBottom="130dp">
 
-        <TextView
-            android:id="@+id/player2_turn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player 2 (Yellow) Turn"
-            android:fontFamily="@font/cheese"
-            android:textSize="24sp"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
-</LinearLayout>
+    <GridLayout
+        android:id="@+id/game_board"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:columnCount="7"
+        android:rowCount="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.466">
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/player1_turn"
+        android:layout_width="235dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/red_button"
+        android:fontFamily="@font/cheese"
+        android:gravity="center"
+        android:text="Player 1 (Red) Turn"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player2_turn"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="132dp"
+        android:background="@drawable/yellow_button"
+        android:fontFamily="@font/cheese"
+        android:gravity="center"
+        android:text="Player 2 (Yellow) Turn"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#000000">
+    android:background="@drawable/wordguess_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,21 +29,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Current Score: 0"
+            android:fontFamily="@font/cheese"
             android:layout_marginEnd="16dp"
-            android:textColor="#FFFFFF"
-            android:background="#222222"
+            android:textColor="@color/black"
             android:padding="8dp"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/highestScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Highest Score: 0"
-            android:textColor="#FFFFFF"
-            android:background="#222222"
+            android:fontFamily="@font/cheese"
+            android:textColor="@color/black"
             android:padding="8dp"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <GridLayout
@@ -64,7 +64,7 @@
         android:columnCount="10"
         android:padding="8dp"
         android:layout_gravity="center"
-        android:background="#A9A9A9" >
+        android:background="@drawable/keyboard" >
     </GridLayout>
 
     <Button
@@ -75,6 +75,8 @@
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:text="SUBMIT"
+        android:fontFamily="@font/cheese"
+        android:background="@drawable/green_button"
         android:textSize="20dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 </LinearLayout>

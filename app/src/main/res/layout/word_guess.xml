@@ -30,7 +30,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="80dp"
         android:fontFamily="@font/cheese"
-        android:background="@drawable/wordguess_colorbutton"
+        android:background="@drawable/wordguess_des"
         android:gravity="center"
         android:text="Guess the five-letter word in five tries by entering words and receiving feedback on the letters that match the target word in the correct position (green) or are included but in the wrong position! (yellow)."
         android:textColor="@color/black"
@@ -94,7 +94,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/blue_button"
+        android:background="@drawable/lightgreen_button"
         android:fontFamily="@font/cheese"
         android:text="PLAY"
         android:textSize="25sp" />
