@@ -23,7 +23,7 @@
 
     <TextView
         android:id="@+id/shortDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -34,7 +34,7 @@
         android:gravity="center"
         android:text="Guess the five-letter word in five tries by entering words and receiving feedback on the letters that match the target word in the correct position (green) or are included but in the wrong position! (yellow)."
         android:textColor="@color/black"
-        android:textSize="22sp" />
+        android:textSize="21sp" />
 
     <TextView
         android:layout_width="wrap_content"

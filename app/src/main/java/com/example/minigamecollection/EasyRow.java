@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class EasyRow extends AppCompatActivity {
     private static final int ROWS = 6;
-    private static final int COLS = 7;
+    private static final int COLS = 6;
     private char[][] board;
     private char currentPlayer;
     private boolean isPlayerTurn;
@@ -45,6 +45,7 @@ public class EasyRow extends AppCompatActivity {
         isPlayerTurn = true;
         player1Turn.setVisibility(View.VISIBLE);
         easyBotTurn.setVisibility(View.INVISIBLE);
+
         initializeBoard();
     }
 
@@ -106,7 +107,7 @@ public class EasyRow extends AppCompatActivity {
 
         if (currentPlayer == 'Y') {
             isPlayerTurn = false;
-            easyBotTurn.setText("Easy Bot's (Yellow) Turn");
+            easyBotTurn.setText("Bot's Turn");
             easyBotTurn.setVisibility(View.VISIBLE);
             new android.os.Handler().postDelayed(this::makeEasyBotMove, 1000);
         } else {
@@ -203,10 +204,9 @@ public class EasyRow extends AppCompatActivity {
     private void showWinner() {
         gameOver = true;
         lastWinner = currentPlayer;
-        String winnerMessage = currentPlayer == 'R' ? "You win!" : "Easy Bot wins!";
+        String winnerMessage = currentPlayer == 'R' ? "You win!" : "Bot wins!";
         player1Turn.setVisibility(View.INVISIBLE);
         easyBotTurn.setVisibility(View.INVISIBLE);
-
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)
@@ -231,12 +231,14 @@ public class EasyRow extends AppCompatActivity {
             isPlayerTurn = false;
             player1Turn.setVisibility(View.INVISIBLE);
             easyBotTurn.setVisibility(View.VISIBLE);
+
             new android.os.Handler().postDelayed(this::makeEasyBotMove, 1000);
         } else {
             currentPlayer = 'R';
             isPlayerTurn = true;
             player1Turn.setVisibility(View.VISIBLE);
             easyBotTurn.setVisibility(View.INVISIBLE);
+
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.example.minigamecollection;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
@@ -12,7 +11,7 @@ import java.util.Random;
 
 public class NormalRow extends AppCompatActivity {
     private static final int ROWS = 6;
-    private static final int COLS = 7;
+    private static final int COLS = 6;
     private char[][] board;
     private char currentPlayer;
     private boolean isPlayerTurn;
@@ -99,7 +98,6 @@ public class NormalRow extends AppCompatActivity {
         return true;
     }
 
-    @SuppressLint("SetTextI18n")
     private void switchPlayer() {
         currentPlayer = (currentPlayer == 'R') ? 'Y' : 'R';
 
@@ -109,7 +107,7 @@ public class NormalRow extends AppCompatActivity {
 
         if (currentPlayer == 'Y') {
             isPlayerTurn = false;
-            normalBotTurn.setText("Normal Bot's (Yellow) Turn");
+            normalBotTurn.setText("Bot's Turn");
             normalBotTurn.setVisibility(View.VISIBLE);
             new android.os.Handler().postDelayed(this::makeNormalBotMove, 1000);
         } else {

@@ -30,7 +30,6 @@
         <activity
             android:name=".Row"
             android:exported="false" />
-        <activity android:name=".Playerxbot_hardmode" />
         <activity
             android:name=".PopStartup"
             android:exported="true" />

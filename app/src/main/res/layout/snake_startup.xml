@@ -33,7 +33,7 @@
     <!-- Reset High Score Button -->
     <TextView
         android:id="@+id/description"
-        android:layout_width="375dp"
+        android:layout_width="320dp"
         android:layout_height="190dp"
         android:layout_marginTop="56dp"
         android:background="@drawable/wordguess_des"
@@ -42,7 +42,7 @@
         android:text="Snake is a classic game where the player controls a growing snake that moves around the screen, eating food while avoiding obstacles and its own tail. As the snake consumes more food, it becomes longer and more challenging to maneuver."
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameTitle"

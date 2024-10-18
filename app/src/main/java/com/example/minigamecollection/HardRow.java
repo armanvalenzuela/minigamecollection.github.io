@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class HardRow extends AppCompatActivity {
     private static final int ROWS = 6;
-    private static final int COLS = 7;
+    private static final int COLS = 6;
     private char[][] board;
     private char currentPlayer;
     private boolean isPlayerTurn;
@@ -20,6 +20,7 @@ public class HardRow extends AppCompatActivity {
     private TextView hardBotTurn;
     private GridLayout gameBoard;
     private Random random;
+
     private char lastWinner = 'R';
 
     @Override
@@ -107,7 +108,7 @@ public class HardRow extends AppCompatActivity {
 
         if (currentPlayer == 'Y') {
             isPlayerTurn = false;
-            hardBotTurn.setText("Hard Bot's (Yellow) Turn");
+            hardBotTurn.setText("Bot's Turn");
             hardBotTurn.setVisibility(View.VISIBLE);
             new android.os.Handler().postDelayed(this::makeHardBotMove, 1000);
         } else {
@@ -231,7 +232,7 @@ public class HardRow extends AppCompatActivity {
     private void showWinner() {
         gameOver = true;
         lastWinner = currentPlayer;
-        String winnerMessage = currentPlayer == 'R' ? "You win!" : "Hard Bot wins!";
+        String winnerMessage = currentPlayer == 'R' ? "You win!" : "Bot wins!";
         player1Turn.setVisibility(View.INVISIBLE);
         hardBotTurn.setVisibility(View.INVISIBLE);
 
@@ -258,6 +259,7 @@ public class HardRow extends AppCompatActivity {
             isPlayerTurn = false;
             player1Turn.setVisibility(View.INVISIBLE);
             hardBotTurn.setVisibility(View.VISIBLE);
+
             new android.os.Handler().postDelayed(this::makeHardBotMove, 1000);
         } else {
             currentPlayer = 'R';

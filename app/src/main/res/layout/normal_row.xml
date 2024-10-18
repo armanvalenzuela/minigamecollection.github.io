@@ -27,9 +27,9 @@
 
     <GridLayout
         android:id="@+id/game_board"
-        android:layout_width="300dp"
+        android:layout_width="330dp"
         android:layout_height="300dp"
-        android:columnCount="7"
+        android:columnCount="6"
         android:rowCount="6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         android:background="@drawable/red_button"
         android:fontFamily="@font/cheese"
         android:gravity="center"
-        android:text="Player 1 (Red) Turn"
+        android:text="Player Turn"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="25sp"
@@ -58,13 +58,13 @@
 
     <TextView
         android:id="@+id/player2_turn"
-        android:layout_width="255dp"
+        android:layout_width="195dp"
         android:layout_height="50dp"
         android:layout_marginBottom="132dp"
         android:background="@drawable/yellow_button"
         android:fontFamily="@font/cheese"
         android:gravity="center"
-        android:text="Bot (Yellow) Turn"
+        android:text="Bot Turn"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24sp"
