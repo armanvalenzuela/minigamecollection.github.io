@@ -111,7 +111,7 @@ public class PopGameplay extends AppCompatActivity {
                 public void run() {
                     highlightTile(sequence.get(index));
                 }
-            }, 1000 * i);
+            }, 500 * i);
         }
 
         handler.postDelayed(new Runnable() {
@@ -120,7 +120,7 @@ public class PopGameplay extends AppCompatActivity {
                 playerTurn = true;
                 updateMessage("Your turn!");
             }
-        }, 1000 * sequence.size());
+        }, 500 * sequence.size());
     }
 
     private void highlightTile(int tileIndex) {
@@ -132,7 +132,7 @@ public class PopGameplay extends AppCompatActivity {
             public void run() {
                 tile.setAlpha(1.0f); // Reset the opacity back to normal
             }
-        }, 500);
+        }, 150);
     }
 
     private void checkPlayerInput(int tileIndex) {
@@ -142,6 +142,7 @@ public class PopGameplay extends AppCompatActivity {
                 score++; // Increase score after each successful round
                 updateScore(); // Update the score display
                 updateMessage("Good job! Get ready for the next round!");
+
                 playerTurn = false;
 
                 // Add a 1-second delay before starting the next round
