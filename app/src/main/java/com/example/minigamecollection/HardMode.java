@@ -24,7 +24,16 @@ public class HardMode extends AppCompatActivity {
     private static final String PREFS_NAME_HARD = "WordGuessPrefsHard";
     private static final String KEY_HIGHEST_STREAK_HARD = "highestStreakHard";
 
-    private final String[] wordList = {"CHAIR", "TABLE", "CLOTH", "PAPER", "GLASS"};
+    private final String[] wordList =
+            {"CRYPT", "GLYPH", "FJORD", "ZONAL", "BLISS",
+            "FLASK", "LODGE", "SPADE", "PRIME","FROST",
+            "BLAZE", "DRIFT", "THIEF", "GRASP", "TWIST",
+            "VIGOR", "TANGO", "CRISP", "SLATE", "TREAD",
+            "PLUMB", "CHAOS", "ESTUS", "POISE", "TALIS",
+            "ARMOR", "ELDEN", "ASHEN", "FROST", "FATAL",
+            "GRACE", "RUNES", "WYVER", "ELDER", "FLINT",
+            "SHINY", "BLADE", "SCOUT", "FERAL","RELIC",
+            "FIEND", "SHARD", "ABYSS", "HAVEN", "DEATH"};
     private String currentWord;
     private int remainingAttempts;
     private int currentStreak;
@@ -184,6 +193,15 @@ public class HardMode extends AppCompatActivity {
         return null;
     }
 
+    private boolean isWordValid(String guessedWord) {
+        for (String word : wordList) {
+            if (word.equalsIgnoreCase(guessedWord)) {
+                return true; // Word exists
+            }
+        }
+        return false; // Word does not exist
+    }
+
     private void checkGuess() {
         StringBuilder guess = new StringBuilder();
         for (int i = 0; i < WORD_LENGTH; i++) {
@@ -197,6 +215,13 @@ public class HardMode extends AppCompatActivity {
 
         guess = new StringBuilder(guess.toString().toUpperCase());
 
+        // Check if the word is valid
+        if (!isWordValid(guess.toString())) {
+            Toast.makeText(this, "Invalid word! Please try again.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // If the word is valid, proceed with guessing logic
         if (isWordGuessed(guess.toString())) {
             displayWinMessage();
         } else {
@@ -213,7 +238,6 @@ public class HardMode extends AppCompatActivity {
             }
         }
     }
-
 
     private boolean isWordGuessed(String guess) {
         return guess.equals(currentWord);

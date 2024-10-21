@@ -10,6 +10,9 @@
     android:background="@drawable/row_bg">
 
     <!-- Game Board -->
+
+    <!-- Player 2 Box -->
+
     <ImageView
         android:id="@+id/back_arrow"
         android:layout_width="80dp"
@@ -17,13 +20,11 @@
         android:layout_gravity="start"
         android:contentDescription="Back to Main"
         android:padding="16dp"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:src="@drawable/back_arrow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Player 2 Box -->
 
     <GridLayout
         android:id="@+id/game_board"

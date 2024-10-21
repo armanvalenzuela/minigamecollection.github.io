@@ -21,7 +21,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Back"
             android:layout_marginEnd="40dp"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:src="@drawable/back_arrow"
             tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
@@ -33,17 +33,17 @@
             android:textColor="@color/black"
             android:fontFamily="@font/cheese"
             android:padding="8dp"
-            android:textSize="14sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/highestScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Highest Score: 0"
             android:fontFamily="@font/cheese"
-            android:textColor="@color/black"
             android:padding="8dp"
-            android:textSize="14sp" />
+            android:text="Highest Score: 0"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
     </LinearLayout>
 
     <GridLayout

@@ -21,7 +21,7 @@ import retrofit2.http.POST
 // Retrofit API Interface
 interface ApiService {
     @FormUrlEncoded
-    @POST("db_minigame.php") // Adjust this URL based on where your PHP file is hosted
+    @POST("db_minigame.php")// Adjust this URL based on where your PHP file is hosted
     fun saveUsername(
         @Field("username") username: String
     ): Call<ResponseBody> // Change to ResponseBody

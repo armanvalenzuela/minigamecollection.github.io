@@ -4,12 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#FFFFFF">
+    android:background="@drawable/wordguess_bg">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LEVEL FAILED"
+        android:fontFamily="@font/cheese"
+
         android:textSize="40sp"
         android:textColor="#000000"
         android:textStyle="bold" />
@@ -19,8 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Current Streak: 0"
+        android:fontFamily="@font/cheese"
         android:textColor="#000000"
-        android:textSize="20dp"
+        android:textSize="21sp"
         android:layout_marginTop="16dp"/>
 
     <TextView
@@ -29,14 +32,18 @@
         android:layout_height="wrap_content"
         android:text="Highest Score: 0"
         android:textColor="#000000"
-        android:textSize="20dp"
+        android:fontFamily="@font/cheese"
+        android:textSize="21sp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="100dp"/>
 
     <Button
         android:id="@+id/playAgainButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
         android:text="PLAY AGAIN"
+        android:fontFamily="@font/cheese"
+        android:background="@drawable/green_button"
+        android:textSize="22sp"
         android:layout_marginTop="50dp"/>
 </LinearLayout>

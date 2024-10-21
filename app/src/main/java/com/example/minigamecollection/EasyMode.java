@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +25,11 @@ public class EasyMode extends AppCompatActivity {
     private static final String KEY_HIGHEST_STREAK_EASY = "highestStreakEasy";
 
 
-    private final String[] wordList = {"APPLE", "MANGO", "PEACH", "GRAPE", "LEMON"};
+    private final String[] wordList =
+            {"APPLE", "MANGO", "PEACH", "GRAPE", "LEMON",
+            "MELON", "DATES", "GUAVA","PRUNE", "OLIVE",
+            "BERRY", "PEARS", "BEANS", "CHILI", "GOURD",
+            "CHIVE", "ENOKI", "PAPAW","CRESS", "PLUMS"};
     private String currentWord;
     private int remainingAttempts;
     private int currentStreak;
@@ -45,7 +49,7 @@ public class EasyMode extends AppCompatActivity {
 
         initializeViews();
         loadHighScoreEasy();
-        ImageButton backButton = findViewById(R.id.backButton);
+        ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent easyintent = new Intent(EasyMode.this, WordGuess.class);
             startActivity(easyintent);
@@ -180,6 +184,16 @@ public class EasyMode extends AppCompatActivity {
         return null;
     }
 
+    private boolean isWordValid(String guessedWord) {
+        for (String word : wordList) {
+            if (word.equalsIgnoreCase(guessedWord)) {
+                return true; // Word exists
+            }
+        }
+        return false; // Word does not exist
+    }
+
+
     private void checkGuess() {
         StringBuilder guess = new StringBuilder();
         for (int i = 0; i < WORD_LENGTH; i++) {
@@ -193,6 +207,13 @@ public class EasyMode extends AppCompatActivity {
 
         guess = new StringBuilder(guess.toString().toUpperCase());
 
+        // Check if the word is valid
+        if (!isWordValid(guess.toString())) {
+            Toast.makeText(this, "Invalid word! Please try again.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // If the word is valid, proceed with guessing logic
         if (isWordGuessed(guess.toString())) {
             displayWinMessage();
         } else {
@@ -209,6 +230,7 @@ public class EasyMode extends AppCompatActivity {
             }
         }
     }
+
 
     private boolean isWordGuessed(String guess) {
         return guess.equals(currentWord);

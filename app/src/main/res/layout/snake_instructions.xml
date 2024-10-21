@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/snake_colorbutton"
+    android:background="@drawable/snake_bg"
     tools:context=".SnakeInstructionsActivity">
 
     <!-- Title for the Instructions -->
@@ -41,12 +41,12 @@
     <!-- Back Button -->
     <Button
         android:id="@+id/backButton"
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:text="Back to Main Menu"
         android:textSize="18sp"
+        android:background="@drawable/red_button"
         android:fontFamily="@font/cheese"
-        android:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintTop_toBottomOf="@id/instructionsText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

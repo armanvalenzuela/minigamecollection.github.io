@@ -16,6 +16,7 @@
         android:background="@drawable/memory_colorbutton"
         android:fontFamily="@font/cheese"
         android:onClick="PopButton"
+        android:elevation="10dp"
         android:text="POP IT"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +32,7 @@
         android:fontFamily="@font/cheese"
         android:onClick="SnakeButton"
         android:text="SNAKE"
+        android:textStyle="bold"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
@@ -106,11 +108,73 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="536dp"
         android:fontFamily="@font/cheese"
+        android:textAlignment="center"
         android:hint="Username"
         android:textSize="21sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gametitle" />
+
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="4dp"
+        android:alpha="0.1"
+        android:elevation="10dp"
+        android:src="@drawable/toe"
+        app:layout_constraintEnd_toEndOf="@+id/tictactoeButton"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="@+id/tictactoeButton"
+        app:layout_constraintTop_toTopOf="@+id/tictactoeButton" />
+
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="12dp"
+        android:alpha="0.2"
+        android:elevation="10dp"
+        android:src="@drawable/snake"
+        app:layout_constraintEnd_toEndOf="@+id/snakeButton"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="@+id/snakeButton"
+        app:layout_constraintTop_toTopOf="@+id/snakeButton" />
+
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="4dp"
+        android:alpha="0.1"
+        android:elevation="10dp"
+        android:src="@drawable/memory"
+        app:layout_constraintEnd_toEndOf="@+id/memoryButton"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/memoryButton"
+        app:layout_constraintTop_toTopOf="@+id/memoryButton" />
+
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="12dp"
+        android:alpha="0.1"
+        android:elevation="10dp"
+        android:src="@drawable/memory"
+        app:layout_constraintEnd_toEndOf="@+id/wordguessButton"
+        app:layout_constraintStart_toStartOf="@+id/wordguessButton"
+        app:layout_constraintTop_toTopOf="@+id/wordguessButton" />
+
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="12dp"
+        android:alpha="0.1"
+        android:elevation="2dp"
+        android:src="@drawable/row"
+        app:layout_constraintEnd_toEndOf="@+id/fourinrowButton"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/fourinrowButton"
+        app:layout_constraintTop_toTopOf="@+id/fourinrowButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

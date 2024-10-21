@@ -2,10 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@drawable/wordguess_bg"
     android:gravity="center">
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="start"
+        android:contentDescription="Back to Main"
+        android:padding="16dp"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/appName"
@@ -23,7 +39,7 @@
 
     <TextView
         android:id="@+id/shortDescription"
-        android:layout_width="335dp"
+        android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -32,7 +48,7 @@
         android:fontFamily="@font/cheese"
         android:background="@drawable/wordguess_des"
         android:gravity="center"
-        android:text="Guess the five-letter word in five tries by entering words and receiving feedback on the letters that match the target word in the correct position (green) or are included but in the wrong position! (yellow)."
+        android:text="Guess the five-letter word in five tries by entering words and receiving feedback on the letters that match the target word in the correct position or are included but in the wrong position!"
         android:textColor="@color/black"
         android:textSize="19sp" />
 
@@ -91,7 +107,6 @@
         android:layout_width="130dp"
         android:layout_height="59dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="32dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/lightgreen_button"

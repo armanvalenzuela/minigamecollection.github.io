@@ -1,5 +1,6 @@
 package com.example.minigamecollection;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class GameList extends AppCompatActivity {
 
     TextView welcomeTextView;
-
-
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +20,15 @@ public class GameList extends AppCompatActivity {
         setContentView(R.layout.game_list);
 
         // Retrieve the username passed from UserActivity
+        welcomeTextView = findViewById(R.id.welcomeText);
         String username = getIntent().getStringExtra("USERNAME");
 
-        welcomeTextView = findViewById(R.id.welcomeText);  // Connect to the TextView that shows the welcome message
-        welcomeTextView.setText("Welcome, " + username + "!");
+          // Connect to the TextView that shows the welcome message
+        if (username != null) {
+            welcomeTextView.setText("Welcome, " + username + "." + " \nHave fun and enjoy our game!");
+        } else {
+            welcomeTextView.setText("Welcome back!");
+        }
     }
 
     public void WordGuessButton(View view){
@@ -50,3 +55,4 @@ public class GameList extends AppCompatActivity {
         startActivity(intent);
     }
 }
+

@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +24,10 @@ public class NormalMode extends AppCompatActivity {
     private static final String PREFS_NAME_NORMAL = "WordGuessPrefsNormal";
     private static final String KEY_HIGHEST_STREAK_NORMAL = "highestStreakNormal";
 
-    private final String[] wordList = {"PARIS", "TOKYO", "MIAMI", "KOREA", "JAPAN"};
+    private final String[] wordList =
+            {"PARIS", "TOKYO", "MIAMI", "KOREA", "JAPAN","KYOTO", "ITALY", "TEXAS", "CHINA", "INDIA", "CHILE", "MACAO", "KENYA",
+                    "QATAR", "NEPAL", "SPAIN", "YEMEN", "HAITI", "EGYPT", "GHANA", "SAHARA", "CONGO", "CZECH", "NIGER", "SYRIA",
+            "SAMOA", "ARUBA", "TIBET"};
     private String currentWord;
     private int remainingAttempts;
     private int currentStreak;
@@ -52,11 +55,10 @@ public class NormalMode extends AppCompatActivity {
 
         currentStreak = getIntent().getIntExtra("currentStreak", 0);
 
-        ImageButton backButton = findViewById(R.id.backButton);
+        ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent mainIntent = new Intent(NormalMode.this, WordGuess.class);
             startActivity(mainIntent);
-            finish();
         });
 
         setupKeyboard();
@@ -184,6 +186,15 @@ public class NormalMode extends AppCompatActivity {
         return null;
     }
 
+    private boolean isWordValid(String guessedWord) {
+        for (String word : wordList) {
+            if (word.equalsIgnoreCase(guessedWord)) {
+                return true; // Word exists
+            }
+        }
+        return false; // Word does not exist
+    }
+
     private void checkGuess() {
         StringBuilder guess = new StringBuilder();
         for (int i = 0; i < WORD_LENGTH; i++) {
@@ -197,6 +208,13 @@ public class NormalMode extends AppCompatActivity {
 
         guess = new StringBuilder(guess.toString().toUpperCase());
 
+        // Check if the word is valid
+        if (!isWordValid(guess.toString())) {
+            Toast.makeText(this, "Invalid word! Please try again.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // If the word is valid, proceed with guessing logic
         if (isWordGuessed(guess.toString())) {
             displayWinMessage();
         } else {
@@ -213,7 +231,6 @@ public class NormalMode extends AppCompatActivity {
             }
         }
     }
-
 
     private boolean isWordGuessed(String guess) {
         return guess.equals(currentWord);

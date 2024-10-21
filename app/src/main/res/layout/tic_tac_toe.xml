@@ -9,11 +9,25 @@
     tools:context=".TicTacToe">
 
 
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="231dp"
         android:layout_height="51dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="204dp"
         android:background="@drawable/title_button"
         android:fontFamily="@font/cheese"
         android:text="TIC TAC TOE"
@@ -28,26 +42,26 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="335dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="275dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="292dp"
         android:background="@drawable/tictactoe_des"
         android:fontFamily="@font/cheese"
         android:gravity="center"
-        android:text=" 5x5 Tic-Tac-Toe is an expanded version of the classic game where players aim to align five of their marks (X or O) horizontally, vertically, or diagonally on a 5x5 grid. The larger grid increases the complexity and strategy, making it more challenging than the traditional 3x3 version."
+        android:text="Tic-Tac-Toe is where the players aim to align five of their marks horizontally, vertically, or diagonally."
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="19sp"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextSizeCheck" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="175dp"
         android:layout_height="75dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/lightgreen_button"
         android:fontFamily="@font/cheese"
         android:onClick="playButton2"

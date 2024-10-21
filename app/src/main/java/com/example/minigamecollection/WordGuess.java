@@ -5,6 +5,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -20,6 +21,11 @@ public class WordGuess extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.word_guess);
 
+        ImageView backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(v -> {
+            Intent backintent = new Intent(WordGuess.this, GameList.class);
+            startActivity(backintent);
+        });
 
         RadioGroup difficultyGroup = findViewById(R.id.difficultyGroup);
         Button playButton = findViewById(R.id.playButton);

@@ -17,7 +17,7 @@
         android:layout_gravity="start"
         android:contentDescription="Back to Main"
         android:padding="16dp"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:src="@drawable/back_arrow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,8 @@
 
     <GridLayout
         android:id="@+id/game_board"
-        android:layout_width="330dp"
-        android:layout_height="300dp"
+        android:layout_width="300dp"
+        android:layout_height="330dp"
         android:columnCount="6"
         android:rowCount="6"
         app:layout_constraintBottom_toBottomOf="parent"

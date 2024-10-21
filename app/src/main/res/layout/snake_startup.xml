@@ -7,22 +7,8 @@
     android:background="@drawable/snake_bg"
     tools:context=".Snake">
 
+
     <!-- Game Title -->
-    <TextView
-        android:id="@+id/gameTitle"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:text="Snake Game"
-        android:background="@drawable/wordguess_bg"
-        android:fontFamily="@font/cheese"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp" />
 
     <!-- Instructions -->
 
@@ -31,11 +17,43 @@
     <!-- Instructions Button -->
 
     <!-- Reset High Score Button -->
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:background="@drawable/wordguess_bg"
+        android:fontFamily="@font/cheese"
+        android:text="Snake Game"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/description"
         android:layout_width="320dp"
         android:layout_height="190dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/wordguess_des"
         android:fontFamily="@font/cheese"
         android:gravity="center"
@@ -44,6 +62,7 @@
         android:textColor="@color/black"
         android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameTitle"
         tools:ignore="TextSizeCheck" />
@@ -52,7 +71,7 @@
         android:id="@+id/startGameButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="236dp"
         android:background="@drawable/green_button"
         android:fontFamily="@font/cheese"
         android:text="Start Game"
@@ -66,13 +85,13 @@
         android:id="@+id/instructionsButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/blue_button"
         android:fontFamily="@font/cheese"
         android:text="Instructions"
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/startGameButton" />
 
@@ -80,13 +99,14 @@
         android:id="@+id/resetHighScoreButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Reset High Score"
-        android:fontFamily="@font/cheese"
-        android:textSize="21sp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/red_button"
-        app:layout_constraintTop_toBottomOf="@id/instructionsButton"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/cheese"
+        android:text="Reset High Score"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instructionsButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

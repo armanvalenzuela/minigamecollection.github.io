@@ -3,6 +3,7 @@ package com.example.minigamecollection;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -16,6 +17,12 @@ public class Row extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.row_menu);
+
+        ImageView backButton = findViewById(R.id.back_arrow);
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, GameList.class);
+            startActivity(intent);
+        });
 
         difficultyGroup = findViewById(R.id.difficultyGroup);
         Button playBotButton = findViewById(R.id.playBotButton);
