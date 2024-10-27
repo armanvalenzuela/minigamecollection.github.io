@@ -27,7 +27,7 @@
         android:id="@+id/title"
         android:layout_width="231dp"
         android:layout_height="51dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/title_button"
         android:fontFamily="@font/cheese"
         android:text="TIC TAC TOE"
@@ -44,7 +44,7 @@
         android:id="@+id/description"
         android:layout_width="275dp"
         android:layout_height="140dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="268dp"
         android:background="@drawable/tictactoe_des"
         android:fontFamily="@font/cheese"
         android:gravity="center"
@@ -59,8 +59,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="175dp"
-        android:layout_height="75dp"
+        android:layout_width="130dp"
+        android:layout_height="59dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/lightgreen_button"
         android:fontFamily="@font/cheese"

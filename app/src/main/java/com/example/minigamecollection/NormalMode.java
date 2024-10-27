@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
@@ -26,7 +27,7 @@ public class NormalMode extends AppCompatActivity {
 
     private final String[] wordList =
             {"PARIS", "TOKYO", "MIAMI", "KOREA", "JAPAN","KYOTO", "ITALY", "TEXAS", "CHINA", "INDIA", "CHILE", "MACAO", "KENYA",
-                    "QATAR", "NEPAL", "SPAIN", "YEMEN", "HAITI", "EGYPT", "GHANA", "SAHARA", "CONGO", "CZECH", "NIGER", "SYRIA",
+                    "QATAR", "NEPAL", "SPAIN", "YEMEN", "HAITI", "EGYPT", "GHANA", "CONGO", "CZECH", "NIGER", "SYRIA",
             "SAMOA", "ARUBA", "TIBET"};
     private String currentWord;
     private int remainingAttempts;
@@ -45,6 +46,14 @@ public class NormalMode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.normal_mode);
 
+        WordGuessBGM.startMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         initializeViews();
         loadHighScoreNormal();
 
@@ -58,6 +67,7 @@ public class NormalMode extends AppCompatActivity {
         ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent mainIntent = new Intent(NormalMode.this, WordGuess.class);
+            BackgroundMusicPlayer.resetBackgroundMusic(this);
             startActivity(mainIntent);
         });
 
@@ -318,5 +328,23 @@ public class NormalMode extends AppCompatActivity {
     private void updateStreakLabels() {
         streakLabel.setText("Current Streak: " + currentStreak);
         highestStreakLabel.setText("Highest Streak: " + highestStreak);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        WordGuessBGM.pauseMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        WordGuessBGM.startMusic(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        WordGuessBGM.stopMusic();
     }
 }

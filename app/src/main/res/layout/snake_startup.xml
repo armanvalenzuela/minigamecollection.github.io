@@ -34,13 +34,14 @@
 
     <TextView
         android:id="@+id/gameTitle"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
+        android:layout_width="135dp"
+        android:layout_height="45dp"
         android:layout_marginTop="136dp"
         android:background="@drawable/wordguess_bg"
         android:fontFamily="@font/cheese"
-        android:text="Snake Game"
+        android:text="SNAKE"
         android:textAlignment="center"
+        android:gravity="center"
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold"

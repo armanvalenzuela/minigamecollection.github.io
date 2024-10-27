@@ -20,6 +20,13 @@ public class PopStartup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_startup);
 
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent Easyintent = new Intent(PopStartup.this, GameList.class);
@@ -61,5 +68,17 @@ public class PopStartup extends AppCompatActivity {
         editor.putInt(HIGH_SCORE_KEY, 0);
         editor.apply();
         Toast.makeText(this, "High Score has been reset!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
     }
 }

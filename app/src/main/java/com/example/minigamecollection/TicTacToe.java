@@ -16,6 +16,13 @@ public class TicTacToe extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.tic_tac_toe);
 
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         ImageButton backButton = findViewById(R.id.back);
         backButton.setOnClickListener(v -> {
             Intent backintent = new Intent(TicTacToe.this, GameList.class);
@@ -29,4 +36,15 @@ public class TicTacToe extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+    }
 }

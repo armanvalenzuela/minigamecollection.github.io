@@ -2,6 +2,7 @@ package com.example.minigamecollection;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -18,6 +19,8 @@ import java.util.List;
 import java.util.Random;
 
 public class SnakeMainActivity extends AppCompatActivity {
+
+    MediaPlayer bgmPlayer;
 
     private RelativeLayout gameBoard;
     private TextView scoreText, highScoreText;
@@ -44,6 +47,15 @@ public class SnakeMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.snake_gameplay);
+
+        bgmPlayer = MediaPlayer.create(this, R.raw.mario_maker); // replace with your music file
+        bgmPlayer.setLooping(true); // Enable looping if you want continuous background music
+        bgmPlayer.start(); // Start playing the music
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         gameBoard = findViewById(R.id.gameBoard);
         scoreText = findViewById(R.id.scoreText);
@@ -113,6 +125,7 @@ public class SnakeMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SnakeMainActivity.this, Snake.class);
+                BackgroundMusicPlayer.resetBackgroundMusic(SnakeMainActivity.this);
                 startActivity(intent);
                 finish(); // Close the MainActivity so it's removed from the back stack
             }
@@ -300,5 +313,30 @@ public class SnakeMainActivity extends AppCompatActivity {
 
         // Reset the game state and reinitialize the snake and food
         initializeGame();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (bgmPlayer != null && bgmPlayer.isPlaying()) {
+            bgmPlayer.pause(); // Pause the music when the activity goes into the background
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (bgmPlayer != null) {
+            bgmPlayer.start(); // Resume the music when the activity comes back into the foreground
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bgmPlayer != null) {
+            bgmPlayer.release(); // Release MediaPlayer resources when the activity is destroyed
+            bgmPlayer = null;
+        }
     }
 }

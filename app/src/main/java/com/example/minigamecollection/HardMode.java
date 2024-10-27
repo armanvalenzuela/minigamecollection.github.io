@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
@@ -51,6 +52,14 @@ public class HardMode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hard_mode);
 
+        WordGuessBGM.startMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         initializeViews();
         loadHighScoreHard();
 
@@ -64,6 +73,7 @@ public class HardMode extends AppCompatActivity {
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent mainIntent = new Intent(HardMode.this, WordGuess.class);
+            BackgroundMusicPlayer.resetBackgroundMusic(this);
             startActivity(mainIntent);
             finish();
         });
@@ -318,5 +328,23 @@ public class HardMode extends AppCompatActivity {
         currentWord = wordList[(int) (Math.random() * wordList.length)];
         activeRow = 0;
         updateStreakLabels();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        WordGuessBGM.pauseMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        WordGuessBGM.startMusic(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        WordGuessBGM.stopMusic();
     }
 }

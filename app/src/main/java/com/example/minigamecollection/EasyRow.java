@@ -27,9 +27,15 @@ public class EasyRow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.easy_row);
 
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         ImageView backArrow = findViewById(R.id.back_arrow);
         backArrow.setOnClickListener(v -> {
             Intent intent = new Intent(EasyRow.this, Row.class);
+            BackgroundMusicPlayer.resetBackgroundMusic(this);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });

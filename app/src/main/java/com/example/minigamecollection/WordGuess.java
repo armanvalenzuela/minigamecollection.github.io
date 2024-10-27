@@ -4,8 +4,9 @@ import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -21,7 +22,14 @@ public class WordGuess extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.word_guess);
 
-        ImageView backButton = findViewById(R.id.back_button);
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+        ImageButton backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(v -> {
             Intent backintent = new Intent(WordGuess.this, GameList.class);
             startActivity(backintent);
@@ -37,10 +45,10 @@ public class WordGuess extends AppCompatActivity {
                 Intent intent;
                 String difficulty = selectedButton.getText().toString().toLowerCase(); // Convert to lowercase
 
-                // Store game mode in SharedPreferences
+
                 getSharedPreferences("GamePrefs", MODE_PRIVATE)
                         .edit()
-                        .putString("gameMode", difficulty) // Save game mode for consistency
+                        .putString("gameMode", difficulty)
                         .apply();
 
                 // Use if-else instead of switch
@@ -61,13 +69,22 @@ public class WordGuess extends AppCompatActivity {
                 Toast.makeText(WordGuess.this, "Please select a difficulty level", Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
 
-
-
-
-
-
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        BackgroundMusicPlayer.stopBackgroundMusic();
     }
 }

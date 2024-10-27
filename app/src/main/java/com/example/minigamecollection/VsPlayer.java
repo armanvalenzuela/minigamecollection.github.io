@@ -12,10 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class VsPlayer extends AppCompatActivity {
     private static final int ROWS = 6;
-    private static final int COLS = 7;
+    private static final int COLS = 6;
     private char[][] board;
     private char currentPlayer;
     private boolean gameOver;
+    private String player1Name;
+    private String player2Name;
     private TextView player1Turn;
     private TextView player2Turn;
     private GridLayout gameBoard;
@@ -26,10 +28,16 @@ public class VsPlayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vs_player);
 
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         ImageView backArrow = findViewById(R.id.back_arrow);
 
         backArrow.setOnClickListener(v -> {
             Intent intent = new Intent(VsPlayer.this, Row.class);
+            BackgroundMusicPlayer.resetBackgroundMusic(this);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
@@ -43,6 +51,15 @@ public class VsPlayer extends AppCompatActivity {
 
         player1Turn.setVisibility(View.VISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
+
+        String[] playerNames = getIntent().getStringArrayExtra("PLAYER_NAMES");
+
+        if (playerNames != null) {
+            player1Name = playerNames[0];
+            player2Name = playerNames[1];
+            player1Turn.setText(player1Name + "'s Turn");
+            player2Turn.setText(player2Name + "'s Turn");
+        }
 
 
         initializeBoard();
@@ -154,7 +171,7 @@ public class VsPlayer extends AppCompatActivity {
 
     private void showWinner() {
         gameOver = true;
-        String winnerMessage = "Player " + (currentPlayer == 'R' ? "1 (Red)" : "2 (Yellow)") + " Wins!";
+        String winnerMessage = (currentPlayer == 'R' ? player1Name : player2Name) + " Wins!";
 
         lastWinner = currentPlayer;
 
@@ -181,7 +198,6 @@ public class VsPlayer extends AppCompatActivity {
 
         player1Turn.setVisibility(View.INVISIBLE);
         player2Turn.setVisibility(View.INVISIBLE);
-
 
         new android.os.Handler().postDelayed(() -> {
             android.app.AlertDialog dialog = new android.app.AlertDialog.Builder(this)

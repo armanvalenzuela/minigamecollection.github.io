@@ -30,11 +30,12 @@
     <TextView
         android:id="@+id/gameTitle"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginTop="104dp"
         android:background="@drawable/memory_colorbutton"
         android:fontFamily="@font/cheese"
-        android:text="Pop It"
+        android:text="POP IT"
+        android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="36sp"
@@ -98,5 +99,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instructionsButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

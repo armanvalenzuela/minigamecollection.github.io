@@ -24,7 +24,7 @@ interface ApiService {
     @POST("db_minigame.php")// Adjust this URL based on where your PHP file is hosted
     fun saveUsername(
         @Field("username") username: String
-    ): Call<ResponseBody> // Change to ResponseBody
+    ): Call<ResponseBody>
 }
 
 class UserActivity : AppCompatActivity() {
@@ -37,12 +37,13 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         usernameEditText = findViewById(R.id.usernameEditText)
         saveButton = findViewById(R.id.saveButton)
 
         // Initialize Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.0.2.2/") // Emulator localhost for XAMPP, change to your IP address if on a real device
+            .baseUrl("http://192.168.1.20/") // Emulator localhost for XAMPP, change to your IP address if on a real device
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

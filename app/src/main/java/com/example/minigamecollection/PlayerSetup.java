@@ -22,6 +22,13 @@ public class PlayerSetup extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.player_setup);
 
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         player1 = findViewById(R.id.player1Name);
         player2 = findViewById(R.id.player2Name);
 
@@ -48,5 +55,17 @@ public class PlayerSetup extends AppCompatActivity {
             intent.putExtra("PLAYER_NAMES", new String[]{player1Name, player2Name});
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
     }
 }

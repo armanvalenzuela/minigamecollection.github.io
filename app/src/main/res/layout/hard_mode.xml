@@ -33,7 +33,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/cheese"
             android:padding="8dp"
-            android:textSize="17sp" />
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/highestScore"
@@ -43,7 +43,7 @@
             android:padding="8dp"
             android:text="Highest Score: 0"
             android:textColor="@color/black"
-            android:textSize="17sp" />
+            android:textSize="13sp" />
     </LinearLayout>
 
     <GridLayout

@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
@@ -47,11 +48,20 @@ public class EasyMode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.easy_mode);
 
+        WordGuessBGM.startMusic(this);
+
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         initializeViews();
         loadHighScoreEasy();
         ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent easyintent = new Intent(EasyMode.this, WordGuess.class);
+            BackgroundMusicPlayer.resetBackgroundMusic(this);
             startActivity(easyintent);
             finish();
         });
@@ -319,5 +329,23 @@ public class EasyMode extends AppCompatActivity {
     private void updateStreakLabels() {
         streakLabel.setText("Current Streak: " + currentStreak);
         highestStreakLabel.setText("Highest Streak: " + highestStreak);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        WordGuessBGM.pauseMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        WordGuessBGM.startMusic(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        WordGuessBGM.stopMusic();
     }
 }

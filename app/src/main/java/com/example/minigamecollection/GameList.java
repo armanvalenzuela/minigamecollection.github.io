@@ -8,10 +8,10 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class GameList extends AppCompatActivity {
 
     TextView welcomeTextView;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +19,19 @@ public class GameList extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.game_list);
 
+        // Start the background music service
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         // Retrieve the username passed from UserActivity
         welcomeTextView = findViewById(R.id.welcomeText);
         String username = getIntent().getStringExtra("USERNAME");
 
-          // Connect to the TextView that shows the welcome message
+        // Connect to the TextView that shows the welcome message
         if (username != null) {
             welcomeTextView.setText("Welcome, " + username + "." + " \nHave fun and enjoy our game!");
         } else {
@@ -54,5 +62,21 @@ public class GameList extends AppCompatActivity {
         Intent intent = new Intent(this, Row.class);
         startActivity(intent);
     }
-}
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        BackgroundMusicPlayer.stopBackgroundMusic();
+    }
+}

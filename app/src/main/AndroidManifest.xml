@@ -15,6 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniGameCollection"
         tools:targetApi="31">
+        <activity
+            android:name=".RowSetup"
+            android:exported="false" />
+        <activity
+            android:name=".LeaderboardActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".ApiService"
+            android:enabled="true"
+            android:exported="true" />
 
         <activity
             android:name=".HardRow"

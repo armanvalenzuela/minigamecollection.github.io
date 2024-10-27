@@ -14,6 +14,13 @@ public class SnakeInstructionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.snake_instructions); // Set the new instructions layout
 
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         // Back to Main Menu button
         Button backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
@@ -22,5 +29,16 @@ public class SnakeInstructionsActivity extends AppCompatActivity {
             startActivity(intent);
             finish(); // Close the instructions activity
         });
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
     }
 }

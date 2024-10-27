@@ -13,6 +13,13 @@ public class PopInstructions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_instructions);
 
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         Button returnButton = findViewById(R.id.returnButton);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,5 +29,16 @@ public class PopInstructions extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
     }
 }

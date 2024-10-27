@@ -35,40 +35,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="20dp" />
 
-    <!-- Game Board Layout -->
     <RelativeLayout
         android:id="@+id/gameBoard"
-        android:layout_width="300dp"
-        android:layout_height="350dp"
+        android:layout_width="330dp"
+        android:layout_height="365dp"
+        android:layout_marginTop="12dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@id/scoreText"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
-
-    <!-- Controls Layout -->
-
-
-        <!-- Main Menu and Restart Button Row -->
-
-
-            <!-- Main Menu Button -->
-
-            <!-- Space between Main Menu and Restart -->
-
-    <!-- Restart Button -->
-
-    <!-- Space between Restart and Up Button -->
-
-
-    <!-- Up Button (centered) -->
-
-    <!-- Movement Buttons (Left and Right) -->
-
-
-            <!-- Space between Restart and Up Button -->
-
-    <!-- Down Button (centered) -->
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreText" />
 
     <Button
         android:id="@+id/mainMenuButton"
@@ -82,7 +58,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -97,7 +73,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -106,7 +82,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center"
         android:layout_marginBottom="156dp"
-        android:background="@drawable/button"
+        android:background="@drawable/up_button"
         android:fontFamily="@font/cheese"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +94,7 @@
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginBottom="104dp"
-        android:background="@drawable/button"
+        android:background="@drawable/right_button"
         android:fontFamily="@font/cheese"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +107,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button"
+        android:background="@drawable/down_button"
         android:fontFamily="@font/cheese"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,7 +119,7 @@
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginBottom="104dp"
-        android:background="@drawable/button"
+        android:background="@drawable/left_button"
         android:fontFamily="@font/cheese"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"

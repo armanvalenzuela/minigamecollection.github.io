@@ -21,6 +21,13 @@ public class Snake extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.snake_startup);
 
+        BackgroundMusicPlayer.startBackgroundMusic(this);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent backIntent = new Intent(Snake.this, GameList.class);
@@ -71,5 +78,16 @@ public class Snake extends AppCompatActivity {
 
         // Show a toast message to inform the user
         Toast.makeText(this, "High Score has been reset!", Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BackgroundMusicPlayer.pauseBackgroundMusic();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BackgroundMusicPlayer.startBackgroundMusic(this);
     }
 }
