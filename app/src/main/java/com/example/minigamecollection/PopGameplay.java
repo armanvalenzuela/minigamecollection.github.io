@@ -25,16 +25,16 @@ public class PopGameplay extends AppCompatActivity {
     private List<Button> tiles = new ArrayList<>();
     private List<Integer> sequence = new ArrayList<>();
     private int currentStep = 0;
-    private int score = 0; // Track player's score
-    private int highScore = 0; // Track player's high score
+    private int score = 0;
+    private int highScore = 0;
     private Handler handler = new Handler();
     private Random random = new Random();
     private boolean playerTurn = false;
-    private TextView scoreText; // TextView to display the score
-    private TextView highScoreText; // TextView to display the high score
-    private TextView messageText; // TextView to display messages
-    private Button startButton; // Button for starting/restarting the game
-    private Button mainMenuButton; // Button to return to the main menu
+    private TextView scoreText;
+    private TextView highScoreText;
+    private TextView messageText;
+    private Button startButton;
+    private Button mainMenuButton;
     private Button fetchLeaderboardButton;
 
     @Override
@@ -42,9 +42,9 @@ public class PopGameplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pop_gameplay);
 
-        bgmPlayer = MediaPlayer.create(this, R.raw.clock_tower); // replace with your music file
-        bgmPlayer.setLooping(true); // Enable looping if you want continuous background music
-        bgmPlayer.start(); // Start playing the music
+        bgmPlayer = MediaPlayer.create(this, R.raw.clock_tower);
+        bgmPlayer.setLooping(true);
+        bgmPlayer.start();
 
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
@@ -52,11 +52,11 @@ public class PopGameplay extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         GridLayout tileGrid = findViewById(R.id.tileGrid);
-        scoreText = findViewById(R.id.scoreText); // Find the scoreText TextView
-        highScoreText = findViewById(R.id.highScoreText); // Find the highScoreText TextView
-        messageText = findViewById(R.id.messageText); // Find the messageText TextView
-        startButton = findViewById(R.id.startButton); // Find the start/restart button
-        mainMenuButton = findViewById(R.id.mainMenuButton); // Find the main menu button
+        scoreText = findViewById(R.id.scoreText);
+        highScoreText = findViewById(R.id.highScoreText);
+        messageText = findViewById(R.id.messageText);
+        startButton = findViewById(R.id.startButton);
+        mainMenuButton = findViewById(R.id.mainMenuButton);
         fetchLeaderboardButton = findViewById(R.id.fetchLeaderboardButton);
 
         // Load the high score from SharedPreferences
@@ -83,7 +83,7 @@ public class PopGameplay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 restartGame();
-                startButton.setText("Restart"); // Change the button text to Restart after starting the game
+                startButton.setText("Restart");
             }
         });
 
@@ -101,7 +101,7 @@ public class PopGameplay extends AppCompatActivity {
         fetchLeaderboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate back to the startup activity
+                // Open leaderboard activity
                 Intent intent = new Intent(PopGameplay.this, LeaderboardActivity.class);
                 intent.putExtra("USER_SCORE", score);
                 startActivity(intent);
@@ -113,9 +113,9 @@ public class PopGameplay extends AppCompatActivity {
     private void restartGame() {
         sequence.clear();
         currentStep = 0;
-        score = 0; // Reset the score when restarting the game
-        updateScore(); // Update the score display
-        updateMessage(""); // Clear the message text
+        score = 0;
+        updateScore();
+        updateMessage("");
         playerTurn = false;
         addToSequence();
         showSequence();
@@ -223,7 +223,7 @@ public class PopGameplay extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         if (bgmPlayer != null && bgmPlayer.isPlaying()) {
-            bgmPlayer.pause(); // Pause the music when the activity goes into the background
+            bgmPlayer.pause();
         }
     }
 
@@ -231,7 +231,7 @@ public class PopGameplay extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (bgmPlayer != null) {
-            bgmPlayer.start(); // Resume the music when the activity comes back into the foreground
+            bgmPlayer.start();
         }
     }
 
@@ -239,7 +239,7 @@ public class PopGameplay extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (bgmPlayer != null) {
-            bgmPlayer.release(); // Release MediaPlayer resources when the activity is destroyed
+            bgmPlayer.release();
             bgmPlayer = null;
         }
     }

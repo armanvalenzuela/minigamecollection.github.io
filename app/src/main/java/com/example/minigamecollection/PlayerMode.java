@@ -22,9 +22,9 @@ public class PlayerMode extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.player_mode);
 
-        bgmPlayer = MediaPlayer.create(this, R.raw.overworld); // replace with your music file
-        bgmPlayer.setLooping(true); // Enable looping if you want continuous background music
-        bgmPlayer.start(); // Start playing the music
+        bgmPlayer = MediaPlayer.create(this, R.raw.overworld);
+        bgmPlayer.setLooping(true);
+        bgmPlayer.start();
 
 
         View decorView = getWindow().getDecorView();

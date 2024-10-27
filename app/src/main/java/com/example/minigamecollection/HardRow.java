@@ -1,5 +1,6 @@
 package com.example.minigamecollection;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
@@ -10,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 public class HardRow extends AppCompatActivity {
+
+    MediaPlayer bgmPlayer;
+
     private static final int ROWS = 6;
     private static final int COLS = 6;
     private char[][] board;
@@ -27,6 +31,10 @@ public class HardRow extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hard_row);
+
+        bgmPlayer = MediaPlayer.create(this, R.raw.pop);
+        bgmPlayer.setLooping(true);
+        bgmPlayer.start();
 
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
@@ -272,6 +280,31 @@ public class HardRow extends AppCompatActivity {
             isPlayerTurn = true;
             player1Turn.setVisibility(View.VISIBLE);
             hardBotTurn.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (bgmPlayer != null && bgmPlayer.isPlaying()) {
+            bgmPlayer.pause(); // Pause the music when the activity goes into the background
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (bgmPlayer != null) {
+            bgmPlayer.start(); // Resume the music when the activity comes back into the foreground
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bgmPlayer != null) {
+            bgmPlayer.release(); // Release MediaPlayer resources when the activity is destroyed
+            bgmPlayer = null;
         }
     }
 }

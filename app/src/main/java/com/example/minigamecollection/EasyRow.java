@@ -1,5 +1,6 @@
 package com.example.minigamecollection;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
@@ -10,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 public class EasyRow extends AppCompatActivity {
+
+    MediaPlayer bgmPlayer;
+
     private static final int ROWS = 6;
     private static final int COLS = 6;
     private char[][] board;
@@ -27,6 +31,10 @@ public class EasyRow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.easy_row);
 
+        bgmPlayer = MediaPlayer.create(this, R.raw.pop);
+        bgmPlayer.setLooping(true);
+        bgmPlayer.start();
+
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -35,7 +43,6 @@ public class EasyRow extends AppCompatActivity {
         ImageView backArrow = findViewById(R.id.back_arrow);
         backArrow.setOnClickListener(v -> {
             Intent intent = new Intent(EasyRow.this, Row.class);
-            BackgroundMusicPlayer.resetBackgroundMusic(this);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
@@ -247,4 +254,30 @@ public class EasyRow extends AppCompatActivity {
 
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (bgmPlayer != null && bgmPlayer.isPlaying()) {
+            bgmPlayer.pause(); // Pause the music when the activity goes into the background
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (bgmPlayer != null) {
+            bgmPlayer.start(); // Resume the music when the activity comes back into the foreground
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bgmPlayer != null) {
+            bgmPlayer.release(); // Release MediaPlayer resources when the activity is destroyed
+            bgmPlayer = null;
+        }
+    }
+
 }
